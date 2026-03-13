@@ -49,7 +49,7 @@ localStorage.setItem("logged_in_user", JSON.stringify(matchedUser));
 
 setTimeout(() => {
     loginBtn.innerText = "Login";
-    window.location.href = "/ThreadHeads/pages/shopage/index.html";
+    window.location.href = "/ThreadHeads/pages/shopPage/index.html";
 
 }, 2000);
 }else{
