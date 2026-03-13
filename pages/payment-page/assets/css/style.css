@@ -1,0 +1,58 @@
+    /* Floating Label Logic */
+        .input-group label {
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+
+        /* Standard inputs */
+        .input-group input:focus+label,
+        .input-group input:not(:placeholder-shown)+label {
+            transform: translateY(-24px) scale(0.85);
+            background-color: white;
+            padding: 0 4px;
+            color: #4f46e5;
+            left: 12px;
+        }
+
+        /* Specific logic for phone input with prefix */
+        /* Adjusted translateX to -50px to align perfectly with the standard left:12px position */
+        .phone-group input:focus+label,
+        .phone-group input:not(:placeholder-shown)+label {
+            transform: translateY(-24px) scale(0.85) translateX(-50px);
+            background-color: white;
+            padding: 0 4px;
+            color: #4f46e5;
+        }
+
+        /* Selects - label always floats */
+        .input-group select+label {
+            transform: translateY(-24px) scale(0.85);
+            background-color: white;
+            padding: 0 4px;
+            color: #4f46e5;
+            left: 12px;
+        }
+
+        /* View Transitions */
+        .hidden-view {
+            display: none;
+            opacity: 0;
+            transform: translateX(15px);
+        }
+
+        .active-view {
+            display: block;
+            animation: fadeInRight 0.4s ease forwards;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }

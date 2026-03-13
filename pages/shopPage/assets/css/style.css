@@ -1,0 +1,132 @@
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Navigation Link Hover Effects */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Elegant Fade & Slide Animation for filtered items */
+        @keyframes revealItem {
+            0% { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.98); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .animate-reveal {
+            animation: revealItem 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+
+        /* Profile Dropdown Transition */
+        #profileDropdown {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: top right;
+        }
+
+        #profileDropdown.hidden-state {
+            opacity: 0;
+            transform: scale(0.95) translateY(-10px);
+            pointer-events: none;
+        }
+
+        #profileDropdown.visible-state {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Size Selection Styling */
+        .size-label {
+            transition: all 0.2s ease;
+        }
+        
+        input[type="radio"][name="size"]:checked + span {
+            background-color: black;
+            color: white;
+            border-color: black;
+        }
+
+        /* Custom Quantity / Size Radio Styling */
+        .custom-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            gap: 8px;
+        }
+
+        .radio-btn {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #e4e4e7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        input[type="radio"][name="qty"]:checked + .radio-btn {
+            border-color: #000;
+        }
+
+        input[type="radio"][name="qty"]:checked + .radio-btn::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .option-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #71717a;
+            transition: color 0.2s;
+        }
+
+        input[type="radio"]:checked ~ .option-label {
+            color: #000;
+        }
+
+        /* Others input reveal */
+        #customQtyWrapper {
+            transition: all 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #customQtyWrapper.active {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 20px;
+        }
