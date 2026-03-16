@@ -1,0 +1,17 @@
+     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+        }
+
+        .nav-link {
+            font-size: 0.75rem;
+            color: #4b5563;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }

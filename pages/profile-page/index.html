@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - DBTK®</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="bg-white min-h-screen flex flex-col">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-gray-100 py-6 px-4 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <h1 class="text-2xl font-extrabold tracking-tighter">DBTK®</h1>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-6">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Brand</a>
+                <a href="#" class="nav-link">Shop</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">Lookbook</a>
+                <a href="#" class="nav-link">FAQ</a>
+                <a href="#" class="nav-link">Stores</a>
+                <a href="#" class="nav-link">Stockists</a>
+                <a href="#" class="nav-link">How To Order</a>
+                <a href="#" class="nav-link">Size Chart</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-5 text-gray-700">
+                <button class="hover:text-black transition-colors"><i class="fa-solid fa-user"></i></button>
+                <button class="hover:text-black transition-colors"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="hover:text-black transition-colors relative">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 md:px-12 py-12 relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+            <!-- Left Column: Account Info -->
+            <div class="md:col-span-2">
+                <h2 class="text-2xl font-bold mb-4">Account</h2>
+                <button onclick="toggleModal(true)"
+                    class="bg-black text-white text-xs font-bold px-6 py-2 rounded uppercase tracking-wider hover:bg-gray-800 transition-colors">
+                    Sign out
+                </button>
+
+                <div class="mt-12">
+                    <h3 class="text-xl font-bold mb-2">Your Orders</h3>
+                    <p class="text-sm text-gray-500 italic">No recent orders</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Account Details -->
+            <div>
+                <h2 class="text-xl font-bold mb-4">Account Details</h2>
+                <div class="text-sm leading-relaxed text-gray-700">
+                    <p class="font-medium">Aaliyah Angelica Ramos</p>
+                    <p class="mt-2 text-gray-500 underline cursor-pointer hover:text-black">Addresses (0)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay / Confirmation Modal -->
+        <div id="signout-modal"
+            class="fixed inset-0 bg-white/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+            <div
+                class="bg-[#f5f5f5] rounded-3xl p-10 md:p-16 max-w-2xl w-full text-center shadow-xl border border-gray-100">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Confirm Sign out</h2>
+                <p class="text-xl md:text-2xl text-gray-800 mb-12">Are you sure you want to sign out?</p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <button onclick="mockSignOut(); window.location.href = '/ThreadHeads/pages/shopPage/index.html';"
+                        class="w-full md:w-auto min-w-[180px] bg-[#d1d1d1] text-gray-800 py-4 px-8 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        Yes, sign out
+                    </button>
+                    <button onclick="toggleModal(false)"
+                        class="w-full md:w-auto min-w-[180px] bg-[#4a90e2] text-white py-4 px-8 rounded-lg font-semibold hover:bg-blue-600 transition-colors shadow-md">
+                        Don't sign out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-12 pb-6 px-4 md:px-12 mt-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Footer Nav -->
+            <nav
+                class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-[10px] md:text-xs uppercase font-medium text-gray-600">
+                <a href="#" class="hover:text-black">Home</a>
+                <a href="#" class="hover:text-black">Brand</a>
+                <a href="#" class="hover:text-black">Shop</a>
+                <a href="#" class="hover:text-black">Blog</a>
+                <a href="#" class="hover:text-black">Lookbook</a>
+                <a href="#" class="hover:text-black">FAQ</a>
+                <a href="#" class="hover:text-black">Stores</a>
+                <a href="#" class="hover:text-black">Stockists</a>
+                <a href="#" class="hover:text-black">How To Order</a>
+                <a href="#" class="hover:text-black">Size Chart</a>
+                <a href="#" class="hover:text-black">Contact</a>
+            </nav>
+
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl font-extrabold tracking-tighter mb-4">DBTK®</h1>
+                <div class="w-12 h-[1px] bg-gray-300 mb-6"></div>
+
+                <div class="flex space-x-6 text-sm mb-8">
+                    <a href="#" class="text-gray-500 hover:text-black">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-black">Terms and Conditions</a>
+                </div>
+
+                <!-- Bottom Bar -->
+                <div
+                    class="w-full flex flex-col md:flex-row items-center justify-between text-[10px] text-gray-400 gap-8 mt-8 border-t border-gray-50 pt-8">
+                    <div class="max-w-sm text-center md:text-left leading-relaxed">
+                        Don't Blame the Kids ® is a lifestyle and clothing brand that aims to change the mindset of
+                        people to kids around the world with its on point and straightforward message.
+                    </div>
+
+                    <div class="flex flex-col items-center gap-3">
+                        <p>Powered by Shopify</p>
+                        <div class="flex space-x-2">
+                            <i class="fa-brands fa-cc-mastercard text-xl"></i>
+                            <i class="fa-brands fa-cc-visa text-xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4 text-gray-600 text-lg">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
