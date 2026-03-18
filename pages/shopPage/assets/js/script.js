@@ -169,3 +169,7 @@ if (currentUser) {
 document.getElementById('userName').textContent = currentUser.first;
 
 }
+
+document.getElementById("Myprofile").addEventListener("click", () => {
+    window.location.href = "/ThreadHeads/pages/profile-page/index.html";
+});
